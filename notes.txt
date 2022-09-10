@@ -1,0 +1,3 @@
+NEXT
+- setup pices to cell
+- draw pieces which are on cell
