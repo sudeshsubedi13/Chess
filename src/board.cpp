@@ -20,6 +20,9 @@ void Board::drawBoard(sf::RenderWindow& window) {
     for(auto cellrow: m_cells) {
         for(auto cell: cellrow) {
             window.draw(cell);
+            if(cell.getPiece() != nullptr) {
+                window.draw(*cell.getPiece());
+            }
         }
     }
 }

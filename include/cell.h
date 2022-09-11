@@ -3,6 +3,7 @@
 
 
 #include <SFML/Graphics.hpp>
+#include <memory>
 #include "piece.h"
 #include "defaults.h"
 
@@ -14,15 +15,16 @@ public:
 
     int getRow() { return m_row; }
     int getCol() { return m_col; }
+    std::shared_ptr<Piece> getPiece() { return m_piece; }
 
     void setWidth(double width) { m_width = width; }
     void setHeight(double height) { m_height = height; }
-    void setPiece(Piece *piece) { m_piece = piece; }
+    void setPiece(std::shared_ptr<Piece> piece);
 
 private:
     int m_row, m_col;
     double m_width, m_height;
-    Piece* m_piece;
+    std::shared_ptr<Piece> m_piece;
 };
 
 
