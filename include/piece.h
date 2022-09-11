@@ -39,5 +39,36 @@ public:
 };
 
 
+class Queen : public Piece
+{
+public:
+    Queen(bool white, bool active); 
+    bool canMove(int x, int y) { return x > y; } // dummy function //TODO
+};
+
+
+class Knight : public Piece
+{
+public:
+    Knight(bool white, bool active); 
+    bool canMove(int x, int y) { return x > y; } // dummy function //TODO
+};
+
+
+class Rook : public Piece
+{
+public:
+    Rook(bool white, bool active); 
+    bool canMove(int x, int y) { return x > y; } // dummy function //TODO
+};
+
+
+class Bishop : public Piece
+{
+public:
+    Bishop(bool white, bool active); 
+    bool canMove(int x, int y) { return x > y; } // dummy function //TODO
+};
+
 
 #endif // PIECE_H
