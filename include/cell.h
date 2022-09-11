@@ -15,6 +15,7 @@ public:
 
     int getRow() { return m_row; }
     int getCol() { return m_col; }
+    sf::Color& getBaseColor() { return base_color; }
     std::shared_ptr<Piece> getPiece() { return m_piece; }
 
     void setWidth(double width) { m_width = width; }
@@ -25,6 +26,7 @@ private:
     int m_row, m_col;
     double m_width, m_height;
     std::shared_ptr<Piece> m_piece;
+    sf::Color base_color;
 };
 
 

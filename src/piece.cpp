@@ -68,3 +68,47 @@ Bishop::Bishop(bool white, bool active)
 
     this->setTexture(m_texture);
 }
+
+
+// moves
+bool Pawn::canMove(int row, int col, Piece* other = nullptr) {
+    std::cout << "test6.1\n";
+    if( this->checkFriendlyFire(other) ) {
+        return false;
+    }
+
+    // one step only
+    // TODO first time two step, en passant
+    std::cout << "test6.2\n";
+    // std::cout << "r, c from piece: " << m_row << ", " << m_col << " and " << row << ", " << col << '\n';
+    if( (m_row-row != 1) && (row-m_row != 1) ) {
+        return false;
+    }
+
+    // diagonal if enemy present
+    std::cout << "test6.3\n";
+    if( (m_col-col > 1) || (col-m_col) > 1 ) {
+        return false;
+    }
+    std::cout << "test6.4\n";
+    if( m_col != col ) {
+        if( other == nullptr ) {
+            return false;
+        }
+        return true;
+    }
+
+    if( other && m_white != other->is_white()) {
+        return false;
+    }
+
+    // white upward move
+    std::cout << "test6.5\n";
+    if( m_white ) {
+        std::cout << "test6.6\n";
+        return m_row-row == 1;
+    } else {
+        std::cout << "test6.7\n";
+        return row-m_row == 1; // black downward move
+    }
+}
