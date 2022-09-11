@@ -13,15 +13,16 @@ class Game
 {
 public:
     Game();
-    void init_piece();
+    void setup_piece();
     void gameloop();
 
 
 private:
     sf::RenderWindow m_window;
     int m_game_width, m_game_height;
-    std::vector<std::unique_ptr<Piece>> m_pieces;
+    std::vector<std::shared_ptr<Piece>> m_pieces;
     Board m_board;
+    int m_piece_count;
 
 private:
     void draw();
