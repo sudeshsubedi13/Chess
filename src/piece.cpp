@@ -53,7 +53,7 @@ Knight::Knight(bool white, bool active)
     if(white)
         m_texture.loadFromFile("res/knight.png");
     else
-        m_texture.loadFromFile("res/knight.png");
+        m_texture.loadFromFile("res/knight1.png");
 
     this->setTexture(m_texture);
 }

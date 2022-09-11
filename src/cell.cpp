@@ -13,7 +13,7 @@ Cell::Cell(int row, int col)
     this->setFillColor( sf::Color::White );
     if( (row + col) % 2 != 0 ) {
         // this->setFillColor( sf::Color(45, 222, 75) );
-        this->setFillColor( sf::Color::Black );
+        this->setFillColor( sf::Color{30, 30, 30} );
     }
 }
 
@@ -23,4 +23,10 @@ void Cell::setPiece(std::shared_ptr<Piece> piece) {
     auto cell_pos = this->getPosition();
     m_piece.get()->setOrigin( piece_size.x / 2.0, piece_size.y / 2.0 );
     m_piece.get()->setPosition(cell_pos.x+cell_width/2, cell_pos.y+cell_height/2);
+    // if( m_piece.get()->is_white() == false ) {
+    //     auto temp_color = m_piece.get()->getColor();
+    //     temp_color.a = 223;
+    //     m_piece.get()->setColor(temp_color);
+    // }
+        
 }
