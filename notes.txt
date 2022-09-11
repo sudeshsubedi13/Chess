@@ -1,3 +1,4 @@
 NEXT
+- move class
 - setup pices to cell ( completed )
 - draw pieces which are on cell ( completed )

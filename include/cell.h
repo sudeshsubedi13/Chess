@@ -1,5 +1,5 @@
 #ifndef CELL_H
-#define CELL_h
+#define CELL_H
 
 
 #include <SFML/Graphics.hpp>

@@ -7,6 +7,7 @@
 #include "defaults.h"
 #include "board.h"
 #include "piece.h"
+#include "move.h"
 
 
 class Game
@@ -21,6 +22,7 @@ private:
     sf::RenderWindow m_window;
     int m_game_width, m_game_height;
     std::vector<std::shared_ptr<Piece>> m_pieces;
+    std::vector<Move> moves;
     Board m_board;
     int m_piece_count;
 
